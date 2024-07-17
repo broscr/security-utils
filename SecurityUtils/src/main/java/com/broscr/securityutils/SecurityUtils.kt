@@ -1,9 +1,15 @@
 package com.broscr.securityutils
 
+import android.app.Activity
 import android.content.Context
 import android.content.pm.ApplicationInfo
+import android.net.ConnectivityManager
+import android.net.NetworkCapabilities
 import android.os.Build
+import android.provider.Settings
 import android.util.Log
+import android.view.Display
+import android.view.WindowManager
 import java.io.BufferedReader
 import java.io.DataOutputStream
 import java.io.File
@@ -13,7 +19,8 @@ class SecurityUtils {
     companion object {
         private const val TAG = "SecurityUtils"
 
-        /** If the device is rooted, it returns true.
+        /**
+         * If the device is rooted, it returns true.
          *
          */
         fun isRooted(): Boolean {
@@ -89,7 +96,8 @@ class SecurityUtils {
             }
         }
 
-        /** If the device is an emulator, it returns true.
+        /**
+         * If the device is an emulator, it returns true.
          *
          */
         fun isEmulator(): Boolean {
@@ -124,7 +132,8 @@ class SecurityUtils {
             return false
         }
 
-        /** If the device using proxy, it returns true.
+        /**
+         * If the device using proxy, it returns true.
          *
          */
         fun isUsingProxy(): Boolean {
@@ -137,12 +146,40 @@ class SecurityUtils {
             return !proxyHost.isNullOrBlank() && !proxyPort.isNullOrBlank()
         }
 
-        /** If the application is debuggable, it returns true
+        /**
+         * If the application is debuggable, it returns true
          *
          * @param Context
          */
         fun isDebuggable(context: Context): Boolean {
             return (context.applicationInfo.flags and ApplicationInfo.FLAG_DEBUGGABLE) != 0
+        }
+
+        /**
+         * Checks whether the device's ADB connection is active, it returns true.
+         *
+         */
+        fun isADBEnabled(context: Context): Boolean {
+            return Settings.Global.getInt(context.contentResolver, Settings.Global.ADB_ENABLED, 0) != 0
+        }
+
+        /**
+         * Checks whether developer options are enabled on the device, it returns true.
+         *
+         * @param Context
+         */
+        fun isDeveloperOptionsEnabled(context: Context): Boolean {
+            return Settings.Global.getInt(context.contentResolver, Settings.Global.DEVELOPMENT_SETTINGS_ENABLED, 0) != 0
+        }
+
+        /**
+         * Detects whether a screenshot has been taken or the screen is being recorded, it returns true.
+         */
+        fun isScreenCaptureEnabled(context: Context): Boolean {
+            val windowManager = context.getSystemService(Context.WINDOW_SERVICE) as WindowManager
+            val display = windowManager.defaultDisplay
+            val flags = display.flags
+            return (flags and Display.FLAG_SECURE) == 0
         }
     }
 }
