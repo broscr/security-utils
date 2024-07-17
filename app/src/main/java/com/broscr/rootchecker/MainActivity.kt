@@ -1,9 +1,10 @@
 package com.broscr.rootchecker
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
 import com.broscr.securityutils.R
+import com.broscr.securityutils.SecurityUtils
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -14,10 +15,10 @@ class MainActivity : AppCompatActivity() {
 
         textView.text =
             buildString {
-                append("Rooted: => ${SecurityUtils.isRooted()} \nEmulator => ${RootChecker.isEmulator()} ")
+                append("Rooted: => ${SecurityUtils.isRooted()} \nEmulator => ${SecurityUtils.isEmulator()} ")
                 append(
-                    "\nProxy => ${RootChecker.isUsingProxy()} \nDebuggable => ${
-                        RootChecker.isDebuggable(
+                    "\nProxy => ${SecurityUtils.isUsingProxy()} \nDebuggable => ${
+                        SecurityUtils.isDebuggable(
                             this@MainActivity
                         )
                     }"
