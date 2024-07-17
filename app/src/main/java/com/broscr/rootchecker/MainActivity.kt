@@ -23,9 +23,9 @@ class MainActivity : AppCompatActivity() {
                         )
                     }"
                 )
-                append("ADBEnabled => ${SecurityUtils.isADBEnabled(this@MainActivity)}")
-                append("DeveloperMode => ${SecurityUtils.isDeveloperOptionsEnabled(this@MainActivity)}")
-                append("ScreenCapture => ${SecurityUtils.isScreenCaptureEnabled(this@MainActivity)}")
+                append("\nADBEnabled => ${SecurityUtils.isADBEnabled(this@MainActivity)}")
+                append("\nDeveloperMode => ${SecurityUtils.isDeveloperOptionsEnabled(this@MainActivity)}")
+                append("\nScreenCapture => ${SecurityUtils.isScreenCaptureEnabled(this@MainActivity)}")
             }
     }
 }

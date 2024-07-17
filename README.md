@@ -66,6 +66,15 @@ SecurityUtils.isUsingProxy()
 
 // If the application is debuggable, it returns true.
 SecurityUtils.isDebuggable(this)
+
+// If the ADB enabled, it returns true.
+SecurityUtils.isADBEnabled(this)
+
+// If the developer options is enabled, it returns true.
+SecurityUtils.isDeveloperOptionsEnabled(this)
+
+// If the screen capture enabled, it returns true.
+SecurityUtils.isScreenCaptureEnabled(this)
 ```
 
 [](./image.png)
