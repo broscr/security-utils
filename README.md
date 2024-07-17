@@ -19,6 +19,12 @@ Security Utils provides the following features:
 
 - **Debuggable Detection:** This feature allows you to detect whether the application is debuggable or not. If the application is debuggable, it can take appropriate actions to prevent malicious activities.
 
+- **ADB(Android Debug Bridge) Detection:** This feature checks whether ADB is enabled on the device. ADB allows developers to communicate with their Android devices for debugging and other purposes. Enabling ADB on a device that isn't in your control can pose security risks, hence this detection.
+
+- **Developer Options Detection:** This feature detects whether Developer Options are enabled on the device. Developer Options provide settings for debugging and application development, and having them enabled on a device that is not meant for development can pose security risks.
+
+- **Screen Capture Detection:** This feature checks whether screen capture is enabled on the device. Disabling screen capture can prevent sensitive information from being captured and potentially misused.
+
 ### Why should I use this library?
 
 There are several reasons why you might consider using Security Utils:
