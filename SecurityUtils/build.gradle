@@ -6,7 +6,7 @@ plugins {
 
 android {
 
-    namespace 'com.broscr.securityutils'
+    namespace 'com.github.securityutils'
     compileSdk 34
 
     defaultConfig {
@@ -36,7 +36,7 @@ android {
 publishing {
     publications {
         release(MavenPublication) {
-            groupId = 'com.broscr'
+            groupId = 'com.github.broscr'
             artifactId = 'securityutils'
             version = '1.0.0'
 
