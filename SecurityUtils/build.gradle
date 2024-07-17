@@ -6,7 +6,7 @@ plugins {
 
 android {
 
-    namespace 'com.broscr.rootchecker'
+    namespace 'com.broscr.securityutils'
     compileSdk 34
 
     defaultConfig {
@@ -37,7 +37,7 @@ publishing {
     publications {
         release(MavenPublication) {
             groupId = 'com.broscr'
-            artifactId = 'rootchecker'
+            artifactId = 'securityutils'
             version = '1.0.0'
 
             afterEvaluate {

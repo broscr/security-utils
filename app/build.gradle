@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace 'com.broscr.rootchecker'
+    namespace 'com.broscr.securityutils'
     compileSdk 34
 
     defaultConfig {
-        applicationId "com.broscr.rootchecker"
+        applicationId "com.broscr.securityutils"
         minSdk 21
         targetSdk 34
         versionCode 1

@@ -36,8 +36,7 @@ There are several reasons why you might consider using RootChecker:
 
 ### How to Install?
 
-You can easily install RootChecker by adding the following dependency to your app-level `build.gradle` file:
-
+You can easily install RootChecker by adding the following dependency to your `settings.gradle` file:
 ```groovy
 // dependencyResolutionManagement {
 //   repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
@@ -47,7 +46,7 @@ You can easily install RootChecker by adding the following dependency to your ap
 //   }
 // }
 ```
-
+You can easily install RootChecker by adding the following dependency to your app-level `build.gradle` file:
 ```groovy
 implementation 'com.github.broscr:RootChecker:Tag'
 ```

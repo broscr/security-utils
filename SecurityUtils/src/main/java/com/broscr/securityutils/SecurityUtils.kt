@@ -1,4 +1,4 @@
-package com.broscr.rootchecker
+package com.broscr.securityutils
 
 import android.content.Context
 import android.content.pm.ApplicationInfo
@@ -9,9 +9,9 @@ import java.io.DataOutputStream
 import java.io.File
 import java.io.InputStreamReader
 
-class RootChecker {
+class SecurityUtils {
     companion object {
-        private const val TAG = "RootChecker"
+        private const val TAG = "SecurityUtils"
 
         /** If the device is rooted, it returns true.
          *

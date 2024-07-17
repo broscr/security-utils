@@ -13,6 +13,6 @@ dependencyResolutionManagement {
         maven { url 'https://jitpack.io' }
     }
 }
-rootProject.name = "Root Checker"
+rootProject.name = "Security Utils"
 include ':app'
-include ':RootChecker'
+include ':SecurityUtils'
