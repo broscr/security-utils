@@ -76,8 +76,13 @@ class SecurityUtils {
             )
             for (property in rootProperties) {
                 val propValue = getSystemProperty(property)
-                if (propValue != null && propValue == "1") {
-                    return true
+                if (propValue != null) {
+                    if (property == "ro.debuggable" && propValue == "1") {
+                        return true
+                    }
+                    if (property == "ro.secure" && propValue == "0") {
+                        return true
+                    }
                 }
             }
 
@@ -160,7 +165,11 @@ class SecurityUtils {
          *
          */
         fun isADBEnabled(context: Context): Boolean {
-            return Settings.Global.getInt(context.contentResolver, Settings.Global.ADB_ENABLED, 0) != 0
+            return Settings.Global.getInt(
+                context.contentResolver,
+                Settings.Global.ADB_ENABLED,
+                0
+            ) != 0
         }
 
         /**
@@ -169,7 +178,11 @@ class SecurityUtils {
          * @param Context
          */
         fun isDeveloperOptionsEnabled(context: Context): Boolean {
-            return Settings.Global.getInt(context.contentResolver, Settings.Global.DEVELOPMENT_SETTINGS_ENABLED, 0) != 0
+            return Settings.Global.getInt(
+                context.contentResolver,
+                Settings.Global.DEVELOPMENT_SETTINGS_ENABLED,
+                0
+            ) != 0
         }
 
         /**
